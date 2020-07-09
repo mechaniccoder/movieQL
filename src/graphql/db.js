@@ -1,4 +1,4 @@
-export const movies = [
+export let movies = [
     {
         id: 1,
         name: "logan",
@@ -24,17 +24,8 @@ export const movies = [
 export const getMovies = () => movies;
 
 export const getMovieById = (id) => {
-    const filteredMovies = movies.filter((movie) => Number(movie.id) === Number(id));
+    const filteredMovies = movies.filter((movie) => movie.id === id);
     return filteredMovies[0];
-};
-
-export const deleteMovie = (id) => {
-    const cleanedMovies = movies.filter((movie) => Number(movie.id) !== Number(id));
-    if (movies.length > cleanedMovies.length) {
-        movies = cleanedMovies;
-        return true;
-    }
-    return false;
 };
 
 export const addMovie = (name, score) => {
@@ -45,4 +36,13 @@ export const addMovie = (name, score) => {
     };
     movies.push(newMovie);
     return newMovie;
+};
+
+export const deleteMovie = (id) => {
+    const cleanedMovies = movies.filter((movie) => Number(movie.id) !== Number(id));
+    if (movies.length > cleanedMovies.length) {
+        movies = cleanedMovies;
+        return true;
+    }
+    return false;
 };
