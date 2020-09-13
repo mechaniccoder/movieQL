@@ -9,7 +9,7 @@
     "dependencies": {
         "esm": "^3.2.25",
         "graphql-yoga": "^1.18.3",
-        "node-fetch": "^2.6.0"
+        "node-fetch": "^2.6.1"
     },
     "scripts": {
         "start": "nodemon --watch src/ -r esm src/index.js"
